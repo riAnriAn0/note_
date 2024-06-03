@@ -1,14 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
-    },
-    
     extend: {
       colors: {
         "verde-escuro":"#29684d",
@@ -18,7 +12,14 @@ module.exports = {
         "preto":"#111111",
         "cinza":"#242424",
       },
-    },
+      screens: {
+        'max-xs': { 'max': '575px' },
+        'max-sm': { 'max': '767px' },
+        'max-md': { 'max': '991px' },
+        'max-lg': { 'max': '1199px' },
+        'max-xl': { 'max': '1399px' },
+      }
+    }
   },
   plugins: [],
 }
