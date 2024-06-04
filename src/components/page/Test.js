@@ -5,7 +5,7 @@ function Test(){
   const [avatar, setAvatar] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/icone')
+    fetch('https://note-json-server.vercel.app/icone')
       .then((response) => response.json())
       .then((avatar) => setAvatar(avatar))
       .catch((error) => console.error('Erro ao buscar dados:', error));

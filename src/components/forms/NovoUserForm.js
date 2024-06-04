@@ -3,13 +3,15 @@ import Button from "./Inputs/Button";
 import Input from "./Inputs/Input";
 import Mensagem from "./Inputs/Mensagem";
 import {v4 as uuidv4} from 'uuid';
+import { useNavigate } from "react-router-dom";
 
 function NovoUserForm() {
     
-    const [novoUser, setNovoUser] = useState({id : '', posts:[]})
+    const [novoUser, setNovoUser] = useState({id : '', avatar: '', posts:[]})
     const [erro, setErro] = useState('')
     const [msgStyle, setMsgStyle] = useState()
     const [senha, setSenha] = useState()
+    const navegate = useNavigate()
     
     function onsubmit(e) {
         e.preventDefault()
@@ -20,7 +22,9 @@ function NovoUserForm() {
 
         novoUser.id = uuidv4()
 
-        fetch('http://localhost:5000/usuarios', {
+        console.log(novoUser)
+
+ '      fetch('https://note-json-server.vercel.app/usuarios', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -31,7 +35,7 @@ function NovoUserForm() {
         .then(data => {
             setErro  ('Usuário cadastrado com sucesso')
             setMsgStyle('text-green-600 text-xs')
-            
+            navegate('/')
         })
         .catch((error) => {
             console.error('Error:', error);

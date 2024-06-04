@@ -1,6 +1,6 @@
 import { FaCircleHalfStroke } from "react-icons/fa6";
 
-function Tema(){
+function Tema({customStyle}){
     const html = document.querySelector('html');
 
     function tema(e) {
@@ -11,7 +11,7 @@ function Tema(){
     return(
         <div>
             <button onClick={tema} >
-                <FaCircleHalfStroke className=" text-lg text-cinza dark:text-white  " />
+                <FaCircleHalfStroke className={` text-lg text-cinza ${customStyle} dark:text-white  `} />
             </button>
         </div>
     )

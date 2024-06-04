@@ -17,7 +17,7 @@ function Test() {
             return setError('Usuario ou senha invalidos!')
         }
 
-        fetch(`http://localhost:5000/usuarios`)
+        fetch(`https://note-json-server.vercel.app/usuarios`)
         .then((resp) => resp.json())
         .then((data) => {
 
@@ -40,9 +40,7 @@ function Test() {
                     <FaPenToSquare className="text-4xl text-azul-escuro max-xs:hidden"/>
                     <span className="font-bold p-2 text-2xl text-azul-escuro border-r border-gray-300 max-xs:hidden" >Notas</span>
                 </div>  
-
                 <Tema />
-
             </div>
 
             <div className=" max-w-max p-4 m-auto shadow-xl shadow-gray-600 text-center max-xs:shadow-none dark:shadow-slate-900 " >
