@@ -32,13 +32,13 @@ function Test() {
     }
 
     return (
-        <Container customStyle={' flex flex-col items-center dark:bg-preto'} >
+        <Container customStyle={' flex flex-col items-center dark:bg-cinza'} >
 
             <div className=" flex justify-between p-5 w-full max-xs:m-auto max-xs:mb-0" >
 
                 <div className="flex">
-                    <FaPenToSquare className="text-4xl text-verde-escuro max-xs:text-6xl"/>
-                    <span className="font-bold p-2 text-2xl text-verde-escuro border-r border-gray-300 max-xs:border-none max-xs:text-5xl" >Notas</span>
+                    <FaPenToSquare className="text-4xl text-verde-escuro max-xs:hidden"/>
+                    <span className="font-bold p-2 text-2xl text-verde-escuro border-r border-gray-300 max-xs:hidden" >Notas</span>
                 </div>  
 
                 <Tema />

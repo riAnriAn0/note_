@@ -15,7 +15,6 @@ function LoginForm({Logar, msg}) {
     function inputChange(e) {
         setUserLogando({...userLogando, [e.target.name] : e.target.value})
     }
-
     return(
         <form onSubmit={submit} className=" flex flex-col gap-10 max-w-max p-10 ">
             <Input 
@@ -29,7 +28,7 @@ function LoginForm({Logar, msg}) {
             <Input 
                 // customStyle={}
                 name={'senha'}
-                type={'text'}
+                type={'password'}
                 placeholder={'Senha'}
                 onchange={inputChange}
                 value={userLogando ? userLogando.senha : ''}
