@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
-import LoginForm from "../forms/LoginForm"
-import Container from "../layout/Container";
 import { FaPenToSquare } from "react-icons/fa6";
 import { FaGithub, FaGoogle, FaMicrosoft } from "react-icons/fa";
 
+import LoginForm from "../forms/LoginForm";
+import Container from "../layout/Container";
+import Tema from "../buttons/Tema";
 
 function Test() {
     const[error, setError] = useState('')
@@ -31,16 +32,20 @@ function Test() {
     }
 
     return (
-        <Container customStyle={' flex flex-col items-center'} >
+        <Container customStyle={' flex flex-col items-center dark:bg-preto'} >
 
-            <div className=" flex justify-start p-5 w-full max-xs:m-auto max-xs:mb-0 max-xs:justify-center" >
+            <div className=" flex justify-between p-5 w-full max-xs:m-auto max-xs:mb-0" >
 
-                <FaPenToSquare className="text-4xl text-verde-escuro max-xs:text-6xl"/>
-                <span className="font-bold p-2 text-2xl text-verde-escuro border-r border-gray-300 max-xs:border-none max-xs:text-6xl" >Notas</span>  
+                <div className="flex">
+                    <FaPenToSquare className="text-4xl text-verde-escuro max-xs:text-6xl"/>
+                    <span className="font-bold p-2 text-2xl text-verde-escuro border-r border-gray-300 max-xs:border-none max-xs:text-5xl" >Notas</span>
+                </div>  
+
+                <Tema />
 
             </div>
 
-            <div className=" max-w-max p-4 m-auto shadow-xl text-center max-xs:shadow-none " >
+            <div className=" max-w-max p-4 m-auto shadow-xl shadow-gray-600 text-center max-xs:shadow-none dark:shadow-slate-900 " >
 
                 <div className=" m-auto w-max  " >
                     <h2 className="font-bold p-4 text-4xl text-verde-escuro ">Login</h2>
