@@ -5,9 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "verde-escuro":"#2AA33D",
-        "verde-escuro-2":"#307a59",
-        "verde-claro":"#e4f1ec",
+        "azul-escuro":"#1f319d",
+        "azul-claro":"#5969c8",
         "claro":"#eaf3f0",
         "preto":"#111111",
         "cinza":"#242424",

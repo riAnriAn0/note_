@@ -26,7 +26,7 @@ function Test() {
             if (user) {
                 navigate(`/usuario/${user.id}`)
             } else {
-                return setError('Usuario ou senha invalidos!')
+                return setError('Usuario ou senha invalidos')
             }
         })
     }
@@ -37,8 +37,8 @@ function Test() {
             <div className=" flex justify-between p-5 w-full max-xs:m-auto max-xs:mb-0" >
 
                 <div className="flex">
-                    <FaPenToSquare className="text-4xl text-verde-escuro max-xs:hidden"/>
-                    <span className="font-bold p-2 text-2xl text-verde-escuro border-r border-gray-300 max-xs:hidden" >Notas</span>
+                    <FaPenToSquare className="text-4xl text-azul-escuro max-xs:hidden"/>
+                    <span className="font-bold p-2 text-2xl text-azul-escuro border-r border-gray-300 max-xs:hidden" >Notas</span>
                 </div>  
 
                 <Tema />
@@ -48,15 +48,15 @@ function Test() {
             <div className=" max-w-max p-4 m-auto shadow-xl shadow-gray-600 text-center max-xs:shadow-none dark:shadow-slate-900 " >
 
                 <div className=" m-auto w-max  " >
-                    <h2 className="font-bold p-4 text-4xl text-verde-escuro ">Login</h2>
+                    <h2 className="font-bold p-4 text-4xl text-azul-escuro ">Login</h2>
                 </div>
 
                 <LoginForm Logar={get} msg={error} />
 
                 <div className=" flex justify-between max-w-60 m-auto text-3xl p-5 " >
-                    <FaGoogle className="text-verde-escuro hover:text-opacity-90 hover:scale-105 "/>
-                    <FaMicrosoft className="text-verde-escuro hover:text-opacity-90 hover:scale-105 "/>
-                    <FaGithub className="text-verde-escuro hover:text-opacity-90 hover:scale-105 "/>
+                    <FaGoogle className="text-azul-escuro hover:text-opacity-90 hover:scale-105 "/>
+                    <FaMicrosoft className="text-azul-escuro hover:text-opacity-90 hover:scale-105 "/>
+                    <FaGithub className="text-azul-escuro hover:text-opacity-90 hover:scale-105 "/>
                 </div>
 
                 <span className=" text-gray-600 text-sm">ou</span>

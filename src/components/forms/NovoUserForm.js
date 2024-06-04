@@ -2,32 +2,60 @@ import { useState } from "react";
 import Button from "./Inputs/Button";
 import Input from "./Inputs/Input";
 import Mensagem from "./Inputs/Mensagem";
+import {v4 as uuidv4} from 'uuid';
 
 function NovoUserForm() {
-
-    const [novoUser, setNovoUser] = useState({})
-
-    function submit(e) {
+    
+    const [novoUser, setNovoUser] = useState({id : '', posts:[]})
+    const [erro, setErro] = useState('')
+    const [msgStyle, setMsgStyle] = useState()
+    const [senha, setSenha] = useState()
+    
+    function onsubmit(e) {
         e.preventDefault()
-        setNovoUser({...novoUser, id : '', 
-            posts:[{
-                id:'',
-                titulo:'',
-                post:''
-            }]
-        })
 
-        console.log(novoUser)
+        if ( !novoUser.nome || !novoUser.senha ) {
+            return setErro('Digite um usuario ou senha válidos')
+        }
+
+        novoUser.id = uuidv4()
+
+        fetch('http://localhost:5000/usuarios', {
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(novoUser)
+        })
+        .then(response => response.json())
+        .then(data => {
+            setErro  ('Usuário cadastrado com sucesso')
+            setMsgStyle('text-green-600 text-xs')
+            
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
     }
 
     function inputChange(e) {
-        setNovoUser({...novoUser, [e.target.name] : e.target.value})
+        setNovoUser({ ...novoUser,[e.target.name] : e.target.value  })
     }
+    
+    function inputSenha(e) {
+        if (e.target.value === senha ) {
+            setNovoUser({...novoUser, [e.target.name] : e.target.value})
+        }else{
+            return setErro('As senha devem ser iguais!')
+        }
+    }
+
 
 
     return(
         <div>
-            <form onSubmit={submit} className=" flex flex-col gap-10 max-w-max p-10 " >
+            <form onSubmit={onsubmit} className=" flex flex-col gap-10 max-w-max p-10 " >
                 <Input 
                     name={'nome'}
                     type={'text'}
@@ -37,18 +65,18 @@ function NovoUserForm() {
                 <Input 
                     name={'senha'}
                     type={'text'}
-                    placeholder={'Digite sua senha'}
-                    onchange={inputChange}
+                    placeholder={'Crie uma senha'}
+                    onchange={(e) => { setSenha(e.target.value)}}
                 />
                 <Input 
                     name={'senha'}
                     type={'text'}
-                    placeholder={'Digite sua senha'}
-                    onchange={inputChange}
+                    placeholder={'Confirme sua senha'}
+                    onchange={inputSenha}
                 />
                 <Mensagem 
-                    msg={''}
-                    customStyle={'text-red-500 text-xs '}
+                    msg={erro}
+                    customStyle={msgStyle ? msgStyle :'text-red-500 text-xs '}
                 />
                 <Button text={'Cadastrar usuário'}/>
             </form>
