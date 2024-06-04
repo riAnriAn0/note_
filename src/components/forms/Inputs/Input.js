@@ -1,4 +1,4 @@
-function Input({type, name, onchange, placeholder, customStyle}) {
+function Input({type, value,name, onchange, placeholder, customStyle}) {
     return(
         <input
             className={`max-w-96 p-3 border-none outline-none hover:shadow-lg ${customStyle}`} 
@@ -6,7 +6,8 @@ function Input({type, name, onchange, placeholder, customStyle}) {
             name={name}
             id={name}
             onChange={onchange}
-            placeholder={placeholder}    
+            placeholder={placeholder}  
+            value={value}  
         />
     ) 
 }

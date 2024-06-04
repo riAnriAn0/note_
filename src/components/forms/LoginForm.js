@@ -17,13 +17,14 @@ function LoginForm({Logar, msg}) {
     }
 
     return(
-        <form onSubmit={submit} className=" flex flex-col gap-10 max-w-max p-10">
+        <form onSubmit={submit} className=" flex flex-col gap-10 max-w-max p-10 ">
             <Input 
                 // customStyle={}
                 name={'nome'}
                 type={'text'}
                 placeholder={'Usuário'}
                 onchange={inputChange}
+                value={userLogando ? userLogando.nome : ''}
             />
             <Input 
                 // customStyle={}
@@ -31,13 +32,14 @@ function LoginForm({Logar, msg}) {
                 type={'text'}
                 placeholder={'Senha'}
                 onchange={inputChange}
+                value={userLogando ? userLogando.senha : ''}
             />
             <Button
                 // customStyle={}
                 text={'Entrar'}
             />
             <Mensagem
-                customStyle={'text-red-500'}
+                customStyle={'text-red-500 text-xs '}
                 msg={msg && msg }
             />
         </form>
