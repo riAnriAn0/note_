@@ -24,7 +24,7 @@ function NovoUserForm() {
 
         console.log(novoUser)
 
- '      fetch('https://note-json-server.vercel.app/usuarios', {
+        fetch('https://note-json-server.vercel.app/usuarios', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
