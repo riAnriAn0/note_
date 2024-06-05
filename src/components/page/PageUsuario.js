@@ -26,9 +26,7 @@ function PageUsuario(){
                     <FaPenToSquare className="text-2xl text-white"/>
                     <span className="font-bold p-2 text-2xl text-white " >Notas</span>
                 </div>
-                <Tema customStyle={'text-white'}/>
-            </header>
-            <div>
+                {/* <Tema customStyle={'text-white'}/> */}
                 <UserControll 
                     nome={ usuario ? usuario.nome : ''} 
                     senha={ usuario ? usuario.senha : ''} 
@@ -36,8 +34,11 @@ function PageUsuario(){
                     id={ usuario ? usuario.id : '' } 
                 /> 
 
-                <div className=" mt-16 p-3 h-screen text-black " >
-                    oi
+            </header>
+            <div>
+                
+                <div className=" mt-24 p-3 h-screen text-black " >
+                   
                 </div>
             </div>
         </Container>
