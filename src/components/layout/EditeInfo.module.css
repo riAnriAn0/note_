@@ -1,0 +1,18 @@
+.edit{
+
+    max-width: 800px;
+    margin: auto;
+    display:flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+::-webkit-scrollbar{
+    background-color: transparent;
+    height: 5px;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(112, 112, 112);
+    border-radius: 5px;
+    cursor: pointer;
+}

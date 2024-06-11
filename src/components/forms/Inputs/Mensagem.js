@@ -1,33 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-function Mensagem({ customStyle, msg}){
+function Mensagem({ customStyle, msg }) {
+    const [visible, setVisible] = useState(false);
 
-    const [visible, setvisible] = useState(false)
-
-    useEffect(()=>{
-        if(!msg){
-            setvisible(false)
-            return
+    useEffect(() => {
+        if (!msg) {
+            setVisible(false);
+            return;
         }
 
-        setvisible(true)
+        setVisible(true);
 
-        const timer = setTimeout(() =>{
-            setvisible(false)
-        }, 2000)
+        const timer = setTimeout(() => {
+            setVisible(false);
+        }, 2000);
 
-        return () => clearTimeout(timer)
-    }, [msg])
+        return () => clearTimeout(timer);
+    }, [msg]);
 
-    return(
-       <>
+    return (
+        <>
             {visible && (
-                <div className={customStyle} >
+                <div className={customStyle}>
                     {msg}
                 </div>
             )}
-       </>
-    )
+        </>
+    );
 }
 
-export default Mensagem
+export default Mensagem;

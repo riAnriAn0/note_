@@ -11,7 +11,7 @@ function Tema({customStyle}){
     return(
         <div>
             <button onClick={tema} >
-                <FaCircleHalfStroke className={` text-lg text-cinza ${customStyle} dark:text-white  `} />
+                <FaCircleHalfStroke className={` text-lg text-cinza ${customStyle} hover:opacity-30 dark:text-white  `} />
             </button>
         </div>
     )
