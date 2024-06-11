@@ -11,6 +11,7 @@ function NovoUserForm() {
     const [msgStyle, setMsgStyle] = useState('');
     const [senha, setSenha] = useState('');
     const navigate = useNavigate();
+    const db = "https://note-json-server.vercel.app/usuarios"
 
     function onsubmit(e) {
         e.preventDefault();
@@ -25,7 +26,7 @@ function NovoUserForm() {
         }
         novoUser.id = uuidv4();
 
-        fetch('http://localhost:5000/usuarios', {
+        fetch(db, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -7,10 +7,11 @@ function EditeInfo({ id, onClose, open }) {
   const [avatar, setAvatar] = useState([]);
   const [infoUser, setInfoUser] = useState();
   const [perfilAtualizado, setPerfilAtualizado] = useState({});
-
+  const db ="https://note-json-server.vercel.app/usuarios"
+  const dbIcone ="https://note-json-server.vercel.app/icone"
   // Pegar ícones de perfil
   useEffect(() => {
-    fetch('http://localhost:5000/icone')
+    fetch(dbIcone)
       .then((response) => response.json())
       .then((avatar) => setAvatar(avatar))
       .catch((error) => console.error('Erro ao buscar dados:', error));
@@ -18,7 +19,7 @@ function EditeInfo({ id, onClose, open }) {
 
   // Pega informações do usuário atual
   useEffect(() => {
-    fetch(`http://localhost:5000/usuarios/${id}`)
+    fetch(`${db}/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setPerfilAtualizado(data);
@@ -29,8 +30,10 @@ function EditeInfo({ id, onClose, open }) {
 
   // Atualiza perfil
   function atualizarPerfil(e) {
+
     e.preventDefault();
-    fetch(`http://localhost:5000/usuarios/${id}`, {
+    
+    fetch(`${db}/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

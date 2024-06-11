@@ -9,6 +9,7 @@ import Tema from "../buttons/Tema";
 
 function Test() {
     const[error, setError] = useState('')
+    const db ="https://note-json-server.vercel.app/usuarios"
     const navigate = useNavigate()
 
     function get(userLogando) {
@@ -17,7 +18,7 @@ function Test() {
             return setError('Usuario ou senha invalidos!')
         }
 
-        fetch(`http://localhost:5000/usuarios`)
+        fetch(db)
         .then((resp) => resp.json())
         .then((data) => {
 

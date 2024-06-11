@@ -13,9 +13,10 @@ function PageUsuario(){
     const [usuario, setUsuario] = useState()
     const [posts ,setPosts] = useState([])
     const [openPost ,setOpenPost] = useState(false)
+    const db ="https://note-json-server.vercel.app/usuarios"
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/usuarios/${id}`)
+        fetch(`${db}/${id}`)
         .then((resp) => resp.json())
         .then((data) => {
             setUsuario(data)

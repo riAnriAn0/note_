@@ -12,9 +12,10 @@ function Post({ titulo, post, newPost, onclose, idPost }) {
   const [erro, setErro] = useState('')
   const [novoPost, setNovoPost] = useState({})
   const [user, setUser] = useState({})
+  const db ="https://note-json-server.vercel.app/usuarios"
 
   function recarregar(){
-    fetch(`http://localhost:5000/usuarios/${id}`)
+    fetch(`${db}/${id}`)
     .then((resp) => resp.json())
     .then((data) =>{
       setUser(data)
@@ -39,7 +40,7 @@ function Post({ titulo, post, newPost, onclose, idPost }) {
 
     setUser({...user, posts : novoArrayPosts})
 
-    fetch(`http://localhost:5000/usuarios/${id}`,{
+    fetch(`${db}/${id}`,{
       method:'PATCH',
       headers:{
         'Content-Type':'application/json'
@@ -55,7 +56,7 @@ function Post({ titulo, post, newPost, onclose, idPost }) {
   }
 
   function criarPost(e) {
-      setNovoPost({...novoPost, [e.target.name] : e.target.value })
+    setNovoPost({...novoPost, [e.target.name] : e.target.value })
   }
 
   function deletar(){
@@ -69,7 +70,7 @@ function Post({ titulo, post, newPost, onclose, idPost }) {
 
     userAtualizado.posts = postsAtualizados;
 
-    fetch(`http://localhost:5000/usuarios/${id}`,{
+    fetch(`${db}/${id}`,{
       method:'PATCH',
       headers:{
         'Content-Type':'application/json'
