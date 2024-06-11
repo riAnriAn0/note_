@@ -98,7 +98,7 @@ function Post({ titulo, post, newPost, onclose, idPost }) {
             placeholder="Adicione um título"
             name="titulo"
             onChange={criarPost}
-            className="p-2 bg-slate-300 dark:bg-cinza font-semibold text-xl border-none outline-none"
+            className="p-2 w-11/12 bg-slate-300 dark:bg-cinza font-semibold text-xl border-none outline-none"
           />
           <div onClick={(e) => { e.stopPropagation(); onclose(); }} className="p-3 text-lg hover:opacity-60">
             <FaXmark />
