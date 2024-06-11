@@ -3,7 +3,7 @@ import styles from './EditeInfo.module.css';
 import { FaXmark } from 'react-icons/fa6';
 import Button from '../forms/Inputs/Button';
 
-function EditeInfo({ id, onclose, open }) {
+function EditeInfo({ id, onClose, open }) {
   const [avatar, setAvatar] = useState([]);
   const [infoUser, setInfoUser] = useState();
   const [perfilAtualizado, setPerfilAtualizado] = useState({});
@@ -119,7 +119,7 @@ function EditeInfo({ id, onclose, open }) {
               </div>
             </div>
             <div className="flex flex-col justify-between">
-              <FaXmark className="w-min ml-auto text-xl hover:opacity-30" onClick={onclose} />
+              <FaXmark className="w-min ml-auto text-xl hover:opacity-30" onClick={onClose} />
               <Button text="Salvar" customStyle="bg-azul-escuro text-white h-max p-2 w-20 rounded-lg hover:scale-105 hover:bg-opacity-40" />
             </div>
           </div>
