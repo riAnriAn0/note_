@@ -56,9 +56,9 @@ function EditeInfo({ id, onClose, open }) {
   return (
     <>
       {open && (
-        <form onSubmit={atualizarPerfil} className="fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-30">
-          <div className="flex justify-between bg-slate-300 dark:bg-preto min-w-96 w-5/6 p-9 rounded-lg fixed z-40 top-20 left-2/4 right-2/4 -translate-x-1/2">
-            <div className="w-2/5 bg-claro dark:bg-cinza p-3 rounded-lg">
+        <form onSubmit={atualizarPerfil} className="fixed top-0 left-0 z-40 w-full h-full  bg-black bg-opacity-30 ">
+          <div className="flex max-xs:flex-col gap-5 justify-between bg-slate-300 dark:bg-preto min-w-96 w-5/6 p-9 rounded-lg fixed z-40 top-20 left-2/4 right-2/4 -translate-x-1/2 max-xs:overflow-auto max-xs:h-4/5">
+            <div className="w-2/5 bg-claro max-xs:w-full dark:bg-cinza p-3 rounded-lg">
               <p className="p-4">Avatar:</p>
               <div className="flex flex-col gap-4">
                 {avatar.map((category) => (
@@ -84,7 +84,7 @@ function EditeInfo({ id, onClose, open }) {
               </div>
             </div>
             <div className="w-2/4">
-              <div className="w-4/5 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
+              <div className="w-4/5 max-xs:w-80 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
                 <p>Nome:</p>
                 <input
                   name="usuario"
@@ -95,7 +95,7 @@ function EditeInfo({ id, onClose, open }) {
                   onChange={inputChange}
                 />
               </div>
-              <div className="w-4/5 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
+              <div className="w-4/5 max-xs:w-80 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
                 <p>Usuário de Login:</p>
                 <input
                   name="nome"
@@ -106,7 +106,7 @@ function EditeInfo({ id, onClose, open }) {
                   onChange={inputChange}
                 />
               </div>
-              <div className="w-4/5 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
+              <div className="w-4/5 max-xs:w-80 m-auto mb-16 bg-claro dark:bg-cinza h-max rounded-lg p-3">
                 <p>Senha:</p>
                 <input
                   name="senha"
